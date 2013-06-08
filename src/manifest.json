@@ -1,0 +1,31 @@
+{
+	"name": "bannerTweet-Google-Chrome-Extension",
+	"description": "Adds one-click bannerTweet to \"more\" buttons.",
+	"homepage_url": "http://bannertweet.nerdissimo.it",
+	"version": "0.1",
+	"icons": {
+		"48": "icon48.png"
+	},
+
+	"manifest_version": 2,
+	
+	"page_action": {
+		"id": "bannerTweet",
+		"name": "Adds one-click bannerTweet",
+		"icons": ["icon16.png"]
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"http://twitter.com/*", "https://twitter.com/*",
+				"http://www.twitter.com/*", "https://www.twitter.com/*"
+			],
+			"js": ["bannertweet.js"]
+		}
+	],
+	"permissions": [
+		"tabs",
+		"http://twitter.com/*", "https://twitter.com/*",
+		"http://www.twitter.com/*", "https://www.twitter.com/*"
+	]
+}
